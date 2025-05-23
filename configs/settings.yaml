@@ -1,0 +1,6 @@
+email:
+  recipients:
+  - 2329095@kiit.ac.in
+  sender: alert@example.com
+  smtp_port: 587
+  smtp_server: smtp.example.com

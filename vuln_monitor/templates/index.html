@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vulnerability Monitor WebApp</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        textarea, input[type=text] { width: 100%; }
+        .report { background: #f8f8f8; border: 1px solid #ccc; padding: 20px; margin-top: 20px; white-space: pre-wrap; }
+        .btn { background: #2196F3; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        .btn:hover { background: #1976D2; }
+    </style>
+</head>
+<body>
+    <h1>Vulnerability Monitor WebApp</h1>
+    <form method="post">
+        <label>Target Email Address:</label><br>
+        <input type="text" name="email" value="{{ email }}" required><br><br>
+        <label>Websites to Scan (one per line):</label><br>
+        <textarea name="websites" rows="5" required>{{ websites }}</textarea><br><br>
+        <button class="btn" type="submit">Start Monitoring</button>
+    </form>
+    {% if report %}
+    <div class="report">
+        <h2>Vulnerability Report</h2>
+        {{ report|safe }}
+    </div>
+    {% endif %}
+</body>
+</html>
